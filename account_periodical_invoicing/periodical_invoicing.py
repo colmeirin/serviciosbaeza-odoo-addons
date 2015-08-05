@@ -402,9 +402,9 @@ class Agreement(orm.Model):
                     next_invoice_date, agreement_line.invoicing_unit,
                     agreement_line.invoicing_interval)
                 to_date = next_invoice_date - timedelta(days=1)
-            invoice_line['name'] += "\n" + _('Period: from %s to %s') % (
-                from_date.strftime(lang.date_format),
-                to_date.strftime(lang.date_format))
+            # invoice_line['name'] += "\n" + _('Period: from %s to %s') % (
+            #     from_date.strftime(lang.date_format),
+            #     to_date.strftime(lang.date_format))
             invoice_lines.append(invoice_line)
             agreement_lines_ids.append(agreement_line.id)
         # Add lines to invoice and create it
